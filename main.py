@@ -39,3 +39,25 @@ def strongest(length: int = 16):
         else:
             password.append(char)
     return "".join(password)
+    
+
+if __name__ == "__main__":
+    if len(sys.argv) < 1:
+        print(f"Usage: python main.py <method> <password length>")
+        sys.exit(1)
+    method = sys.argv[1]
+    if len(sys.argv) == 3:
+        length = sys.argv[2]
+        if method == "hard":
+            print(hard(length))
+        elif method == "strong":
+            print(strong(length))
+        elif method == "strongest":
+            print(strongest(length))
+    else:
+        if method == "hard":
+            print(hard())
+        elif method == "strong":
+            print(strong())
+        elif method == "strongest":
+            print(strongest())
