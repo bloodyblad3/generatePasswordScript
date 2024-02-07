@@ -15,7 +15,7 @@ def to_binary(num: int):
         num //= 2
     return s
 
-def hard(length: int = 8, possible_words: str = None):
+def hard(length: int = 8):
     characters = chrs[:chrs_half_len] + nums
     password = [random.choice(characters) for i in range(length)]
     for index, letter in enumerate(password):
