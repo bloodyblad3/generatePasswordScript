@@ -23,3 +23,19 @@ def hard(length: int = 8, possible_words: str = None):
             password[index] = letter.upper()
             return "".join(password)
 
+def strong(length: int = 12):
+    characters = chrs[:chrs_half_len] + capitalize_chrs[chrs_half_len:] + nums
+    password = [random.choice(characters) for i in range(length)]
+    return "".join(password)
+
+def strongest(length: int = 16):
+    characters = chrs[:chrs_half_len] + capitalize_chrs[chrs_half_len:] + spec_chrs + nums
+    password = []
+    while len(password) < int(length):
+        char = str(random.choice(characters))
+        if char.isdigit():
+            char = to_binary(int(char))
+            password.append(char)
+        else:
+            password.append(char)
+    return "".join(password)
